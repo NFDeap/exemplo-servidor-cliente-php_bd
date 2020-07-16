@@ -18,13 +18,13 @@
 
 			$.post('server.php', data, function(res) {
 				console.log(res);
-				if (res.notifications.comment != null || res.notifications != []) {
-					$('#response').append(res.notifications.comment + '<br>');
+				if (res.notify.comment != null || res.notify != []) {
+					$('#response').append(res.notify.comment + '<br>');
 				}
-				/* for(i in res.notifications){ */
-				/* console.log(res.notifications.comment); */
+				/* for(i in res.notifications){
+				 console.log(res.notifications.comment); 
 
-				/* } */
+				 } */
 
 				getNotifications(res.timestamp);
 
@@ -66,7 +66,7 @@
 
             $.ajax({
                 type: "post",
-                url: "insert_notify.php",
+                url: "Inseert_notify",
                 data: {                                
                 	'author': author,
 					'comment': comment,
@@ -81,7 +81,6 @@
             });
 
         }
-
 
 	</script>
 

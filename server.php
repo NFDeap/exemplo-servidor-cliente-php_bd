@@ -23,6 +23,8 @@ try {
             $timestamp = $row->now;
         }
 
+        
+
         $sql = $PDO->prepare("SELECT * FROM notifications WHERE timestamp > '$timestamp'");
         $sql->execute();
 
@@ -52,7 +54,7 @@ try {
             $notifications = $notifications;
         }
 
-        $data = array('notifications' => $notifications, 'timestap' => $timestamp);
+        $data = array('notify' => $notifications, 'timestap' => $timestamp);
         echo json_encode($data);
         exit;
     
